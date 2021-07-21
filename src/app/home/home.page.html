@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Medical Analysis
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Medical Analysis</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="bg-image"></div>
+
+<div class="bg-text">
+  <div *ngIf="!loading">
+    <div style="width: 100%; background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     border-radius: 10px;">
+     <!-- <p>{{testmsg}}</p> -->
+      <H1 style="padding-top: 10px; padding-bottom: 10px;">Sign in</H1>
+    </div>
+
+    <ion-item style="border-radius: 10px;">
+      <ion-label >Login type:</ion-label>
+      <ion-select interface="popover" [(ngModel)]="selectValue" (ionChange)="onChange()">
+        <ion-select-option value="patient">Patient</ion-select-option>
+        <ion-select-option value="doctor">Doctor</ion-select-option>
+        <ion-select-option value="nurse">Nurse</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <input class="field" id="username" placeholder="username">
+    <input class="field" id="password" type="password" placeholder="password">
+    <a id="passerrMsg" style="color: red; font-weight: 400;">{{passerrMsg}}</a><Br>
+
+    <ion-button style="margin-top: 30px;" (click)="login()">Sign in</ion-button>
+  </div>
+
+  <ion-item *ngIf="loading">
+    <ion-label>loading...</ion-label>
+    <ion-spinner name="lines" color="primary"></ion-spinner>
+  </ion-item>
+</div>
+</ion-content>

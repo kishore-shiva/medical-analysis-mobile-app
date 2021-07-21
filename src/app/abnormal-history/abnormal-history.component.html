@@ -1,0 +1,27 @@
+<H2 style="margin-left: auto; margin-right: auto;"><b>select abnormal to view :</b></H2>
+<div style="height: 100%; overflow: scroll;">
+  <div class="abnormal-box" *ngFor="let abnormal of abnormal_values">
+    <div flexLayout="row">
+      <div flexLayout="row">
+        <div fxFlex="50">
+          <h3 style="margin-left: 10px;">{{abnormal["patient_id"]}}</h3>
+        </div>
+        <div fxFlex="50">
+          <ion-button style="width: 135px; margin-top: 7px; margin-left: 20px;" color="danger" (click)="openDialog(abnormal)">View statistics</ion-button>
+        </div>
+      </div>
+      <div flexLayout="row">
+        <p fxFlex="31" style="margin-left: 10px;">time:</p>
+        <h5 fxFlex style="margin-left: 10px; margin-top: 1px;">{{abnormal["time"]}}</h5>
+      </div>
+      <div flexLayout="row">
+        <p fxFlex="31" style="margin-left: 10px; margin-top: -8px;">abnormaltiy:</p>
+        <h5 fxFlex style="margin-left: 10px; margin-top: -8px;">{{abnormal["abnormality_type"]}}</h5>
+      </div>
+      <div flexLayout="row">
+        <p fxFlex="34" style="margin-left: 10px; margin-top: -10px;">value:</p>
+        <h5 fxFlex style="margin-top: -8px;">{{abnormal["abnormal_value"]}}</h5>
+      </div>
+    </div>
+  </div>
+</div>

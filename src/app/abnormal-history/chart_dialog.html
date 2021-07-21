@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Abnormality statistics</h1>
+<div mat-dialog-content>This graph shows the range of 30 currently recorded values.</div>
+<div fxFlex="50" style="display: block; height: 65%; width: 90%;">
+  <canvas id="abnormality" height="1%" width="1%"></canvas>
+</div>
+<div mat-dialog-actions>
+  <button mat-button style="height:35px; width: 80px; margin-top: 10px; margin-left: 90px; border-radius: 10px;" mat-dialog-close (click)="close()">Close</button>
+</div>

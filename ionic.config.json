@@ -1,0 +1,8 @@
+{
+  "name": "medical_analysis",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

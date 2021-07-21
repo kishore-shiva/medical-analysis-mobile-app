@@ -1,0 +1,48 @@
+<div style="width: 100%; height: 100%; background: #001528; overflow: auto; overflow-y: scroll;" class="main_content">
+
+  <div flexLayout="row">
+    <ion-button color="danger" style="width: 20%; margin-left: 77%; margin-top: 10px;" (click)="signOut()">Sign Out</ion-button>
+  </div>
+  <div flexLayout="row" class="details">
+    <h5 fxFlex="38" style="color: white;"><u>Paitent Name:</u></h5>
+    <h4 style="color: white;">{{patientDetails['name']}}</h4>
+  </div>
+  <div flexLayout="row" style="margin-top: -6%;">
+    <h5 style="color: white;" fxFlex="13"><u>age</u>:</h5>
+    <h3 style="color: white; margin-left: 25%;">{{patientDetails['age']}}</h3>
+  </div>
+
+  <div style="display: block;">
+    <canvas id="myChart" height="150px"></canvas>
+  </div>
+
+  <!-- Showing the detected abnormality graphs -->
+  <H2 style="margin-left: 10px; color: white;"><U>Detected Abnormalities:</U></H2>
+  <div style="margin-left: 2px;">
+
+    <div fxFlex="48" style="display: block; height: 55%; width: 55%;">
+      <canvas id="abnormal_saturation" height="1%" width="1%"></canvas>
+    </div>
+
+    <div fxFlex="48" style="display: block; height: 60%; width: 60%;">
+      <canvas id="abnormal_heart" height="1%" width="1%"></canvas>
+    </div>
+
+  </div>
+
+    <div flexLayout="row" style="margin-left: 2px;">
+      <div fxFlex="48" style="display: block; height: 60%; width: 60%;">
+        <canvas id="abnormal_bp_dia" height="1%" width="1%"></canvas>
+      </div>
+
+      <div fxFlex="48" style="display: block; height: 55%; width: 55%;">
+        <canvas id="abnormal_bp" height="1%" width="1%"></canvas>
+      </div>
+
+    </div>
+
+    <div flexLayout="row">
+      <ion-button *ngIf="this.history_access == true" fxFlex="55" routerLink="/abnormal_history" routerLinkActive="active" style="margin-left: auto; margin-right: auto; font-size: 16px; text-transform: none;" >View Abnormality History</ion-button>
+    </div>
+
+</div>

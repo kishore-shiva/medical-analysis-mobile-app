@@ -1,0 +1,23 @@
+<ion-button class="signOut" (click)="signOut()">Sign out</ion-button>
+<H2 style="margin-left: auto; margin-right: auto;"><b>select patient to view :</b></H2>
+<div style="height: 100%; overflow: scroll;">
+  <div class="patient-box" *ngFor="let patient of patients_list">
+    <div flexLayout="row">
+      <div fxFlex="50">
+        <h3 style="margin-left: 10px;">{{patient["name"]}}</h3>
+        <div flexLayout="row">
+          <p fxFlex="12" style="margin-left: 10px;">id:</p>
+          <h5 fxFlex style="margin-left: 10px; margin-top: 1px;">{{patient["id"]}}</h5>
+        </div>
+        <div flexLayout="row">
+          <p fxFlex="22" style="margin-left: 10px; margin-top: -10px;">age:</p>
+          <h5 fxFlex style="margin-top: -8px;">{{patient["age"]}}</h5>
+        </div>
+      </div>
+      <div fxFlex="50">
+        <ion-button style="width: 155px; margin-top: 30px;" color="danger" (click)="openChartComponent(patient)">View live analysis</ion-button>
+      </div>
+    </div>
+  </div>
+</div>
+
