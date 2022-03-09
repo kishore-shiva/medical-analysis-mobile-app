@@ -23,7 +23,7 @@ export class HomePage implements OnInit{
 
   ngOnInit(): void{
 
-    this.http.get('http://192.168.1.32:9001/see', {}, {})
+    this.http.get('http://localhost:9001/see', {}, {})
     .then(data => {
       this.testmsg = data.data["name"]
       console.log(data.status);
@@ -107,13 +107,16 @@ export class HomePage implements OnInit{
     else{
       this.passerrMsg = "";
       if(this.selectValue == "patient"){
+        console.log("logging in patient")
         this.loading = true;
         this.socketService.loginPatient(username, password).subscribe((data) => {
+          console.log("subscribed........................");
           if(data == null){
             this.passerrMsg = "invalid username or password";
             this.loading = false;
           }
           else{
+            console.log("came in.............................");
           console.log('logged in value is : '+ data);
           this.loading = false;
           localStorage.setItem("userDetails", JSON.stringify(data));

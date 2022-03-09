@@ -30,7 +30,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { from } from 'rxjs';
 
-const config: SocketIoConfig = { url: 'http://192.168.1.18:9002', options: {} };
+const config: SocketIoConfig = { url: 'http://localhost:9002', options: {} };
 
 @NgModule(
   {declarations: [AppComponent, ChartComponent, AbnormalHistoryComponent, PatientslistComponent],

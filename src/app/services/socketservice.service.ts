@@ -14,7 +14,7 @@ export class SocketserviceService {
   };
 
   socket: any;
-  readonly url: string = 'http://192.168.1.18:9002';
+  readonly url: string = 'http://localhost:9002';
 
   constructor(private http: HttpClient) {
     this.socket = io(this.url)
